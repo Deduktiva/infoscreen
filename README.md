@@ -13,8 +13,11 @@ T1:23:respawn:/sbin/getty -L ttymxc1 115200 vt100
 T2:23:respawn:/sbin/getty -L ttymxc2 115200 vt100
 T3:23:respawn:/sbin/getty -L ttymxc3 115200 vt100
 ```
- - boot, login
+ - boot, login, configure ethernet (DHCP)
  - `cd /debootstrap ; debootstrap --second-stage`
+ - reboot
+ - `apt-get install xserver-xorg xserver-xorg-video-fbdev iceweasel
+   x11-apps -y`
 
 #### engicam specific: XXX(azet)
 ```
