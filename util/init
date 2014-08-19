@@ -1,35 +1,21 @@
 #!/usr/bin/env bash
 
-readonly STARTPAGE="$(dirname ${##})/serve/blank.html"
-
 # fail on any error (i.e. ret != 0)
 set -e
 
 # redirect stdout, stderr to file
-exec &> >(tee init.log) #or logger
+exec &> >(tee init.log)
 
 # error handling
 function fail() {
-  printf "%s" "FAILING: ${1}"
+  printf "%s" "FAILING: ${1}" | logger
   pkill X
 } ; trap 'fail "bash ERR"' ERR
 
-function start_x() {
-  X -nocursor & 
-}
 
-function start_firefox() {
-  local DISPLAY=:0.0
+X -nocursor &
 
-  # remove any previous session data and clutter
-  rm -rf ~/.mozilla
-
-  firefox -offline ${STARTPAGE} &
-}
-
-start_x && start_firefox 
-
-# wait for X and firefox initzialisation to finish
+# wait for X finish initialization
 sleep 60
 
 # disable screen saver
@@ -40,6 +26,3 @@ xset s noblank
 
 # disable VESA display power management signaling
 xset -dpms
-
-#EOF
-

@@ -21,7 +21,8 @@ T3:23:respawn:/sbin/getty -L ttymxc3 115200 vt100
 deb http://debian.inode.at/debian/ wheezy main
 deb http://security.debian.org/ wheezy/updates main
 ```
- - `apt-get update ; apt-get install openssh-server xserver-xorg xserver-xorg-video-fbdev x11-xserver-util xdotool iceweasel -y`
+ - `apt-get update ; apt-get install openssh-server xserver-xorg xserver-xorg-video-fbdev x11-xserver-util python3 python3-pip iceweasel -y`
+ - `pip-3.2 install selenium`
 
 #### engicam specific:
 ```
