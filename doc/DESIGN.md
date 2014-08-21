@@ -12,7 +12,7 @@ implemented in the current design.
 
 ### Content
 #### Format
-Content to be pushed onto devices SHALL be packaged and compressed as ZIP
+Content to be pushed onto devices SHALL be packaged and compressed in ZIP
 format [1]. The implementation MUST support multiple ZIP files to be
 pushed onto devices concurrently.
 
@@ -42,7 +42,7 @@ contentupdate-2014-08-19.zip:
 
 #### Display Time
 Each subdirectory contained in a ZIP file MUST contain a file `time`.
-This file will be used to define display time periods (i.e. how low a
+This file will be used to define display time periods (i.e. how long a
 certain website will be displayed until rotation continues).
 
 The `time` files only content is a duration specified in milliseconds.
