@@ -1,6 +1,5 @@
 vendor/*
 util/init.log
-content/new/*
 content/active/*
 !content/active/blank.html
 python/__pycache__/*
