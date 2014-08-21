@@ -56,6 +56,6 @@ An example may look like this:
 Which specifies two and a half minutes of display time)
 
 
-[0] - (W3C: WebDriver)[http://www.w3.org/TR/webdriver/]    
-[1] - (Selenium2 - WebDriver)[http://docs.seleniumhq.org/projects/webdriver/]    
-[2] - (.ZIP File Format Specification)[http://www.pkware.com/documents/casestudies/APPNOTE.TXT]    
+[0] - [W3C: WebDriver](http://www.w3.org/TR/webdriver)    
+[1] - [Selenium2 - WebDriver](http://docs.seleniumhq.org/projects/webdriver)    
+[2] - [.ZIP File Format Specification](http://www.pkware.com/documents/casestudies/APPNOTE.TXT)    
