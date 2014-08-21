@@ -16,7 +16,7 @@ class Infoscreen:
         # set the display
         os.environ['DISPLAY'] = ":0"
 
-        ## initialize Firefox via Webdriver
+        # initialize Firefox via Webdriver
         self.driver = webdriver.Firefox()
 
         # display default page
@@ -39,7 +39,7 @@ class Infoscreen:
         '''
         for k in self.scan_for_incoming():
             f = zipfile.ZipFile(k)
-            f.extractall(dest)
+            f.extractall(self.destdir)
             os.remove(k)
 
     def display_time(self, directory):
