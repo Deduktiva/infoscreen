@@ -23,6 +23,9 @@ class Infoscreen:
 
         # XXX(azet): maximize_window does not properly work
 
+    def stop(self):
+        self.driver.quit()
+
     def scan_for_incoming(self):
         '''scan the incoming folder for recently uploaded ZIP files'''
         files = []

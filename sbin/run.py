@@ -7,10 +7,13 @@ def main():
                 defaultpage='/home/azet/dev/infoscreen/content/active/blank.html',
                 sourcedir='/home/azet/dev/infoscreen/content/new/',
                 destdir='/home/azet/dev/infoscreen/content/active/'
-             )
 
-    nfoscr.start()
-    nfoscr.serve()
+             )
+    try:
+        nfoscr.start()
+        nfoscr.serve()
+    finally:
+        nfoscr.stop()
 
 if __name__ == '__main__':
     main()
