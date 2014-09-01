@@ -55,6 +55,15 @@ An example may look like this:
 (The only content of the file `time` in the subdirectory `08` is `150000`.
 Which specifies two and a half minutes of display time)
 
+#### Changing active content
+Newly uploaded ZIP files MAY contain an updated or empty replacement of a 
+previous actively displayed directory. This can be used to change active
+content as well as to remove active content. An empty directory MAY be 
+placed inside a new ZIP file with the same name as the active directory
+to be removed. The empty directory MUST be ignored by the software 
+implementation.
+
+
 
 [0] - [W3C: WebDriver](http://www.w3.org/TR/webdriver)    
 [1] - [Selenium2 - WebDriver](http://docs.seleniumhq.org/projects/webdriver)    
