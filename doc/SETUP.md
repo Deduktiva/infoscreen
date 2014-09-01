@@ -24,6 +24,14 @@ deb http://security.debian.org/ wheezy/updates main
  - `apt-get update ; apt-get install openssh-server xserver-xorg xserver-xorg-video-fbdev x11-xserver-util python3 python3-pip iceweasel -y`
  - `pip-3.2 install selenium`
 
+### infoscreen software installation
+ - add a new user `infoscreen` with password disabled
+ - `mkdir -p /opt/infoscreen ; chown infoscreen:infoscreen
+   /opt/infoscreen`
+ - checkout the git repo in `/opt/infoscreen` or copy over an archive
+ - configure `sbin/run.py`
+ - setup `sbin/init` to be run at bootup or install a display manager
+
 #### engicam specific:
 ```
 sudo dd if=/srv/default_image/uImage of=/dev/sdb bs=1M seek=1
