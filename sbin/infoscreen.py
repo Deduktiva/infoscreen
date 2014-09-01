@@ -27,7 +27,7 @@ class Infoscreen:
         '''scan the incoming folder for recently uploaded ZIP files'''
         files = []
         # XXX(azet): zipfile.is_zipfile(k) always returns False?
-        [files.append(src + k) for k in os.listdir(src) if k.endswith('.zip')]
+        [files.append(self.sourcedir + k) for k in os.listdir(self.sourcedir) if k.endswith('.zip')]
         return files
 
     def extract_zip_files(self):
@@ -36,10 +36,10 @@ class Infoscreen:
         working directory for display in the browser. the
         extracted zip file is then deleted.
         '''
-        for k in self.scan_for_incoming():
-            f = zipfile.ZipFile(k)
+        for zips in self.scan_for_incoming():
+            f = zipfile.ZipFile(zips)
             f.extractall(self.destdir)
-            os.remove(k)
+            os.remove(zips)
 
     def display_time(self, directory):
         ''' returns the display time for a given directory '''
@@ -49,13 +49,14 @@ class Infoscreen:
         except FileNotFoundError:
             return 150000
 
-    def serve_content(self):
+    def serve(self):
         ''' display the website content '''
         while True:
+            self.extract_zip_files()
+
             for root, dirs, files in os.walk(self.destdir):
                 if 'index.html' in files:
                     t = self.display_time(root)
                     self.driver.get('file://' + root + '/index.html')
                     time.sleep(t/1000)
-
 
