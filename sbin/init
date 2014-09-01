@@ -4,7 +4,7 @@
 set -e
 
 # redirect stdout, stderr to file
-exec &> >(tee init.log)
+exec &> >(tee ../init.log)
 
 # error handling
 function fail() {

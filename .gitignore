@@ -1,5 +1,5 @@
+init.log
 vendor/*
-util/init.log
 content/active/*
 !content/active/blank.html
 python/__pycache__/*
