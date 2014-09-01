@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from selenium import webdriver
 import os, time, zipfile
+from subprocess import call
 
 class Infoscreen:
     def __init__(self, defaultpage, sourcedir, destdir):
@@ -21,6 +22,7 @@ class Infoscreen:
         # display default page
         self.driver.get('file://' + self.defaultpage)
 
+        call(['xdotool', 'key', 'F11'])
         # XXX(azet): maximize_window does not properly work
 
     def stop(self):
