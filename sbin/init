@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!USE THIS SCRIPT ONLY FOR TESTING!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 # fail on any error (i.e. ret != 0)
 set -e
 

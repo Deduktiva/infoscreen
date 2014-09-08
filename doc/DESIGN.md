@@ -55,7 +55,7 @@ An example may look like this:
 (The only content of the file `time` in the subdirectory `08` is `150000`.
 Which specifies two and a half minutes of display time)
 
-#### Changing active content
+#### Updating and removing active content
 Newly uploaded ZIP files MAY contain an updated or empty replacement of a 
 previous actively displayed directory. This can be used to change active
 content as well as to remove active content. An empty directory MAY be 
