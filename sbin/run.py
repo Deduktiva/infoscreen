@@ -7,8 +7,8 @@ def main():
                 defaultpage='/home/azet/dev/infoscreen/content/active/blank.html',
                 sourcedir='/home/azet/dev/infoscreen/content/new/',
                 destdir='/home/azet/dev/infoscreen/content/active/'
-
              )
+             
     try:
         nfoscr.start()
         nfoscr.serve()
