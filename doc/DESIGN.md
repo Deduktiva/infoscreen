@@ -23,10 +23,18 @@ config.csv
 ...
 ```
 
+Only the filename `config.csv` is mandatory, all other filenames are
+suggested to be named in ascending order, but this is NOT REQUIRED.
+
+The presence or use of images is OPTIONAL.
+
+It is suggested to use one image per HTML file, and the image SHOULD
+match the configured display resolution.
+
 #### Config
 ```
-filename1;displaytime1
-filename2;displaytime2
+01.html;displaytime1
+02.html;displaytime2
 ...
 ```
 
