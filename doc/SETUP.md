@@ -46,6 +46,12 @@ sudo dd if=/srv/default_image/uImage of=/dev/sdb bs=1M seek=1
 sudo tar xf /srv/default_image/rootfs.tgz
 ```
 
+bootloader config:
+```
+set bootargs set bootargs noinitrd console=ttymxc3,115200 arm_freq=800 engi_board=\${board} video=\${video_type},\${lcd_panel} fbmem=14M video=mxcfb1:off video=mxcfb2:off vt.global_cursor_default=0 fec_mac=\${fecaddr}
+```
+
+
 ### TODO:
 
  - firefox settings in /etc/iceweasel/prefs
