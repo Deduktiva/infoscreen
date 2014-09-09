@@ -11,60 +11,48 @@ implemented in the current design.
 
 
 ### Content
-#### Format
-Content to be pushed onto devices SHALL be packaged and compressed in ZIP
-format [1]. The implementation MUST support multiple ZIP files to be
-pushed onto devices concurrently.
 
-#### ZIP File Directory Structure
-A ZIP file SHALL contain one (1) or more subdirectories in accending
-number sequence (e.g. 01..99). Each subdirectory contains the
-contents of one (1) website to be displayed. An example tree structure
-might look like this:
+Structure of the content directory:
 ```
-contentupdate-2014-08-19.zip:
-  /01
-     index.html
-     graphics/
-              ad.jpeg
-              header.jpeg
-              [...]
-     time
-  /02
-    index.html
-    gif/
-        ani01.gif
-        ani02.gif
-        [...]
-    time
-  [...]
+config.csv
+01.html
+02.html
+...
+01.jpg
+02.jpg
+...
 ```
 
-#### Display Time
-Each subdirectory contained in a ZIP file MUST contain a file `time`.
-This file will be used to define display time periods (i.e. how long a
-certain website will be displayed until rotation continues).
-
-The `time` files only content is a duration specified in milliseconds.
-
-An example may look like this:
+#### Config
 ```
-  08/time:
-    150000
+filename1;displaytime1
+filename2;displaytime2
+...
 ```
-(The only content of the file `time` in the subdirectory `08` is `150000`.
-Which specifies two and a half minutes of display time)
+
+Each line in the `config.csv` specifies a filename that MUST be a
+valid HTML file that will be displayed for a given time in seconds.
+
+After all files have been displayed, the rotation starts again with
+the first file.
+
 
 #### Updating and removing active content
-Newly uploaded ZIP files MAY contain an updated or empty replacement of a 
-previous actively displayed directory. This can be used to change active
-content as well as to remove active content. An empty directory MAY be 
-placed inside a new ZIP file with the same name as the active directory
-to be removed. The empty directory MUST be ignored by the software 
-implementation.
+
+The current assets are expected in the directory called `content/active`.
+To replace the content, create a new folder `content/new` with the new content,
+then touch a state file called `content/do-update`. When the update state file
+is found by the infoscreen software, it SHALL, in the specified order:
+
+1. pause the rotation,
+2. recursively remove `content/old`,
+3. rename `content/active` to `content/old`,
+4. rename `content/new` to `content/active`,
+5. unlink the `content/do-update` file,
+6. recursively remove `content/old`,
+7. restart the rotation by rereading the configuration file and starting at the first entry.
 
 
 
 [0] - [W3C: WebDriver](http://www.w3.org/TR/webdriver)    
 [1] - [Selenium2 - WebDriver](http://docs.seleniumhq.org/projects/webdriver)    
-[2] - [.ZIP File Format Specification](http://www.pkware.com/documents/casestudies/APPNOTE.TXT)    
