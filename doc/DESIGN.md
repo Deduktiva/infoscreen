@@ -12,7 +12,7 @@ implemented in the current design.
 
 ### Content
 
-Structure of the content directory:
+Structure of the `content/` directory:
 ```
 config.csv
 01.html
@@ -24,7 +24,7 @@ config.csv
 ```
 
 Only the filename `config.csv` is mandatory, all other filenames are
-suggested to be named in ascending order, but this is NOT REQUIRED.
+suggested to be named in ascending order, but NOT REQUIRED.
 
 The presence or use of images is OPTIONAL.
 
@@ -47,10 +47,10 @@ the first file.
 
 #### Updating and removing active content on the device
 
-The current assets are expected in the directory called `content/active`.
-To replace the content, create a new folder `content/new` with the new content,
-then touch a state file called `content/do-update`. When the update state file
-is found by the infoscreen software, it SHALL, in the specified order:
+The current content assets are expected in the `content/active` directory.
+To replace the content, a new folder `content/new` is created with new content,
+then a state file (`content/do-update`) touched. When the update state file
+is found by the software implementation, it SHALL, in the specified order:
 
 1. pause the rotation,
 2. recursively remove `content/old`,
