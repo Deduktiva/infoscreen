@@ -37,7 +37,7 @@ After all files have been displayed, the rotation starts again with
 the first file.
 
 
-#### Updating and removing active content
+#### Updating and removing active content on the device
 
 The current assets are expected in the directory called `content/active`.
 To replace the content, create a new folder `content/new` with the new content,
@@ -53,6 +53,17 @@ is found by the infoscreen software, it SHALL, in the specified order:
 7. restart the rotation by rereading the configuration file and starting at the first entry.
 
 
+#### Considerations for central updates
 
+The following section is OPTIONAL.
+
+The server pushing the updates SHALL follow this procedure:
+
+1. Copy `content/active` to `content/new` using hard links
+2. Update `content/new` with the new content
+3. Touch the file `content/do-update`
+
+
+------
 [0] - [W3C: WebDriver](http://www.w3.org/TR/webdriver)    
 [1] - [Selenium2 - WebDriver](http://docs.seleniumhq.org/projects/webdriver)    
