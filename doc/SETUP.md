@@ -29,8 +29,7 @@ deb http://security.debian.org/ wheezy/updates main
  - `mkdir -p /opt/infoscreen ; chown infoscreen:infoscreen
    /opt/infoscreen`
  - checkout the git repo in `/opt/infoscreen` or copy over an archive
- - configure `sbin/run.py`
- - setup `sbin/init` to be run at bootup or install a display manager
+ - configure `sbin/run.py` if need be
 
 ### device settings / bootup
 
