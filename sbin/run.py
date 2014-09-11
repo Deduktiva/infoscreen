@@ -4,9 +4,9 @@ from infoscreen import Infoscreen
 
 def main():
     nfoscr = Infoscreen(
-                defaultpage='/home/azet/dev/infoscreen/content/active/blank.html',
-                sourcedir='/home/azet/dev/infoscreen/content/new/',
-                destdir='/home/azet/dev/infoscreen/content/active/'
+                defaultpage='/opt/infoscreen/content/active/blank.html',
+                sourcedir='/opt/infoscreen/content/new/',
+                destdir='/opt/infoscreen/content/active/'
              )
              
     try:
