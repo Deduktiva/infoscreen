@@ -1,26 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# !!USE THIS SCRIPT ONLY FOR TESTING!!
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+rm -rf /home/infoscreen/.mozilla /home/infoscreen/.cache
 
-# fail on any error (i.e. ret != 0)
-set -e
-
-# redirect stdout, stderr to file
-exec &> >(tee ../init.log)
-
-# error handling
-function fail() {
-  printf "%s" "FAILING: ${1}" | logger
-  pkill X
-} ; trap 'fail "bash ERR"' ERR
-
-
-X -nocursor &
-
-# wait for X finish initialization
-sleep 60
+matchbox-window-manager -use_titlebar no -use_cursor no &
 
 # disable screen saver
 xset s off
@@ -30,3 +12,12 @@ xset s noblank
 
 # disable VESA display power management signaling
 xset -dpms
+
+
+while true; do
+    cd /opt/infoscreen
+      ./sbin/run.py
+        sleep 0.1
+      done
+done
+

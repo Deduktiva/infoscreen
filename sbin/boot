@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rm -rf /tmp/*
+
+fbset -xres 1280 -yres 720 -pixclock 60
+
+exec start-stop-daemon --exec /usr/bin/startx --user infoscreen --chuid infoscreen --start -- /opt/infoscreen/sbin/init -- -nocursor
+
