@@ -16,8 +16,6 @@ xset -dpms
 
 while true; do
     cd /opt/infoscreen
-      ./sbin/run.py
-        sleep 0.1
-      done
+    ./sbin/run.py
+    sleep 0.1
 done
-
